@@ -32,6 +32,7 @@ if st.button("Predict"):
     try:
         prediction = model.predict(input_df)
         st.write(f"Predicted Overall Rating: {prediction[0]:.2f}")
+        
     except Exception as e:
         st.error(f"Error during prediction: {e}")
 

@@ -519,5 +519,5 @@ with open('Fifa_Regression_Model.pkl', 'wb') as file:
 
 2. The source code for the development will be provided in the GIThub repository
    
-3. Here is the link to the deployed application :
+3. Here is the link to the deployed application : https://emmanueladoteyacquayefifapredict.streamlit.app/
 """
