@@ -4,7 +4,8 @@ import pickle
 
 # Load the model
 try:
-    model = pickle.load('Fifa_Regression_Model.pkl')
+    with open('Fifa_Regression_Model.pkl', 'rb') as file:
+        model = pickle.load(file)
 except Exception as e:
     st.error(f"Error loading model: {e}")
 
