@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
 # Load the model
 try:
-    model = joblib.load('Fifa_Regression_Model.pkl')
+    model = pickle.load('Fifa_Regression_Model.pkl')
 except Exception as e:
     st.error(f"Error loading model: {e}")
 
