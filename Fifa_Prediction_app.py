@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
 # Load the scalers and model
-model = joblib.load('Fifa_Regression_Model.pkl')
-
+with open('Fifa_Regression_Model.pkl', 'rb') as file:
+        model = pickle.load(file)
 
 st.title("FIFA Player Rating Predictor")
 
