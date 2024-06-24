@@ -22,7 +22,6 @@ for feature in input_var:
 # Predict button
 if st.button("Predict"):
     input_df = pd.DataFrame([inputs])
-    st.write(input_df)
     # Make prediction
     try:
         prediction = model.predict(input_df)
