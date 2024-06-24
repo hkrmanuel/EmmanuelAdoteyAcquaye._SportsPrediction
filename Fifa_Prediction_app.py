@@ -16,17 +16,15 @@ input_var = ['movement_reactions', 'potential', 'passing', 'wage_eur', 'value_eu
 inputs = {}
 
 # Collect input data from the user
-run = True
-
 for feature in input_var:
-    while(run):
-        inputs[feature] = st.number_input(f"Enter {feature}", value=0.0)
-        if feature != 'value_eur' or feature != 'wage-eur':
-            if inputs[feature] < 100:
-                st.error(f"Please enter a value between 0 and 100 for {feature}")
-            else:
-                run = False
-            
+    if feature in ['value_eur', 'wage_eur']:
+        inputs[feature] = st.number_input(f"Enter {feature}", value=0.0, step=1000.0)
+    else:
+        inputs[feature] = st.number_input(f"Enter {feature}", value=0.0, step=1.0, min_value=0.0, max_value=100.0)
+    
+    if inputs[feature] < 0:
+        st.error(f"Please enter a non-negative value for {feature}")
+        
 # Predict button
 if st.button("Predict"):
     input_df = pd.DataFrame([inputs])
